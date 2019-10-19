@@ -4,6 +4,7 @@
         color: '#a6bbcf',
         defaults: {
             force: {value: false, required: true},
+            userAgent: {value: 'node-red-contrib-google-ddns', required: true},
         },
         credentials: {
             hostname: {type: 'text'},
@@ -26,7 +27,7 @@
     </div>
     <div class="form-row">
         <label for="node-input-hostname"><i class="fa fa-globe"></i> Hostname</label>
-        <input type="text" id="node-input-hostname">
+        <input type="text" id="node-input-hostname" placeholder="subdomain.example.com">
     </div>
     <div class="form-row">
         <label for="node-input-username"><i class="fa fa-user"></i> Username</label>
@@ -37,9 +38,13 @@
         <input type="password" id="node-input-password">
     </div>
     <div class="form-row">
-        <label for="node-input-force"><i class="fa fa-key"></i> Force update</label>
+        <label for="node-input-userAgent"><i class="fa fa-bullhorn"></i> User Agent</label>
+        <input type="text" id="node-input-userAgent">
+    </div>
+    <div class="form-row">
+        <label for="node-input-force"><i class="fa fa-refresh"></i> Force update</label>
         <input type="checkbox" id="node-input-force">
-        <div class="form-tips"><b>Warning:</b> This normally not necessary and can result in Google blocking this client if the node is called frequently.</div>
+        <div class="form-tips"><b>Warning:</b> Enabling this is normally not necessary and may result in Google blocking this client if the node is called frequently.</div>
     </div>
 </script>
 
