@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('google-ddns', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            force: {value: false, required: true},
+        },
+        credentials: {
+            hostname: {type: 'text'},
+            username: {type: 'text'},
+            password: {type: 'password'},
+        },
+        inputs: 1,
+        outputs: 2,
+        icon: 'function.png',
+        label: function() {
+            return this.name || 'google-ddns';
+        },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="google-ddns">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-hostname"><i class="fa fa-globe"></i> Hostname</label>
+        <input type="text" id="node-input-hostname">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="fa fa-user"></i> Username</label>
+        <input type="text" id="node-input-username">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password">
+    </div>
+    <div class="form-row">
+        <label for="node-input-force"><i class="fa fa-key"></i> Force update</label>
+        <input type="checkbox" id="node-input-force">
+        <div class="form-tips"><b>Warning:</b> This normally not necessary and can result in Google blocking this client if the node is called frequently.</div>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="google-ddns">
+    <p>A node to update the IP address of a Google Dynamic DNS record</p>
+</script>
