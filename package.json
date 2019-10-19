@@ -14,17 +14,25 @@
   "license": "MIT",
   "author": "Mick Dekkers <mickdekkersnl@gmail.com>",
   "scripts": {
-    "build": "tsc",
+    "build": "run-p build:*",
+    "build:copy": "copyfiles -u 1 src/*.html dist",
+    "build:tsc": "tsc",
     "clean": "rm -rf dist/*",
     "fmt": "run-p fmt:*",
     "fmt:package_json": "sort-package-json",
     "fmt:prettier": "prettier --write \"**/*.{js,ts,html,json,yaml,yml}\""
   },
+  "dependencies": {
+    "google-ddns": "^1.1.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@types/node": "^12.11.1",
+    "@types/node-red": "^0.20.0",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
+    "copyfiles": "^2.1.1",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "husky": "^3.0.9",
@@ -33,5 +41,10 @@
     "prettier": "^1.18.2",
     "sort-package-json": "^1.22.1",
     "typescript": "^3.6.4"
+  },
+  "node-red": {
+    "nodes": {
+      "google-ddns": "dist/google-ddns.js"
+    }
   }
 }
