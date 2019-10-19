@@ -23,6 +23,7 @@ interface GoogleDDNSNode extends Node {
 
 interface GoogleDDNSNodeProps extends NodeProperties {
     force: boolean;
+    userAgent: string;
 }
 
 module.exports = (RED: Red) => {
@@ -33,7 +34,7 @@ module.exports = (RED: Red) => {
             hostname: this.credentials.hostname,
             username: this.credentials.username,
             password: this.credentials.password,
-            userAgent: RED.settings.googleDdnsUserAgent,
+            userAgent: props.userAgent,
         });
 
         this.on(
@@ -129,12 +130,6 @@ module.exports = (RED: Red) => {
             hostname: {type: 'text'},
             username: {type: 'text'},
             password: {type: 'password'},
-        },
-        settings: {
-            googleDdnsUserAgent: {
-                value: 'node-red-contrib-google-ddns',
-                exportable: true,
-            },
         },
     });
 };
