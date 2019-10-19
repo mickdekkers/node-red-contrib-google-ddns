@@ -1,0 +1,37 @@
+{
+  "name": "node-red-contrib-google-ddns",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A Node-RED node to update the IP address of a Google Dynamic DNS record",
+  "homepage": "https://github.com/mickdekkers/node-red-contrib-google-ddns#readme",
+  "bugs": {
+    "url": "https://github.com/mickdekkers/node-red-contrib-google-ddns/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mickdekkers/node-red-contrib-google-ddns.git"
+  },
+  "license": "MIT",
+  "author": "Mick Dekkers <mickdekkersnl@gmail.com>",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist/*",
+    "fmt": "run-p fmt:*",
+    "fmt:package_json": "sort-package-json",
+    "fmt:prettier": "prettier --write \"**/*.{js,ts,html,json,yaml,yml}\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^10.0.0-0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "sort-package-json": "^1.22.1",
+    "typescript": "^3.6.4"
+  }
+}

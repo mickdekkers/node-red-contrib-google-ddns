@@ -1,0 +1,6 @@
+'**/*.{js,ts,html,json,yaml,yml}':
+  - prettier --write
+  - git add
+'package.json':
+  - sort-package-json
+  - git add
