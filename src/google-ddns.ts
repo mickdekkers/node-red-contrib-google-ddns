@@ -64,12 +64,14 @@ module.exports = (RED: Red) => {
                     return;
                 }
 
-                // Update the message with the sync result
+                // Update the message payload with the sync result
                 Object.assign(msg, {
-                    status: syncResult.status,
-                    response: syncResult.response,
-                    payload: syncResult.message,
-                    ip: syncResult.ip,
+                    payload: {
+                        status: syncResult.status,
+                        response: syncResult.response,
+                        payload: syncResult.message,
+                        ip: syncResult.ip,
+                    },
                 });
 
                 // Send message to first or second output depending on status
